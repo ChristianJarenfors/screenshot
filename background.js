@@ -15,8 +15,6 @@ function captureTab(tab, tabIndex) {
           );
           reject(chrome.runtime.lastError);
         } else {
-          // You can save the screenshot data URI to disk or do something else with it here
-          console.log("Captured tab: " + tab.url);
           saveScreenshot(imageUri, tabIndex);
           resolve(imageUri);
         }
@@ -74,12 +72,6 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
   choosenPropertyName = message.data.choosenPropertyName;
   choosenStartIndex = message.data.choosenStartIndex;
   directionValue = message.data.directionValue;
-  // Process the received message and data (from content script)
-  console.log("Background script received message:", message.data);
+
   screenshotAllTabs();
-  // You can optionally send a response back to the content script
 });
-// // To initiate the screenshot process, you could call screenshotAllTabs in response to some event, like a browser action click
-// chrome.browserAction.onClicked.addListener(() => {
-//   screenshotAllTabs();
-// });
