@@ -1,2 +1,4 @@
 # screenshot
-A chrome extension for screnshotting every open tab in a chrome browser.
+Chrome extension for screenshooting every open tab
+
+Currently doesnt work with groups : https://groups.google.com/a/chromium.org/g/chromium-extensions/c/2RO1vp-8lqE?pli=1
